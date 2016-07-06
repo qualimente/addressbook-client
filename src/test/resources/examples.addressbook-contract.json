@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "request": {
+        "path": "/customers/c92294cb-c609-4af7-9761-538b19c9761e/addressbook/addresses",
+        "method": "GET",
+        "destination": "addressbook.qualimente.com",
+        "query": null,
+        "body": ""
+      },
+      "response": {
+        "status": 404,
+        "body": "",
+        "headers": {}
+      }
+    },
+    {
+      "request": {
+        "path": "/customers/c92294cb-c609-4af7-9761-538b19c9761e/addressbook/addresses",
+        "method": "POST",
+        "destination": "addressbook.qualimente.com",
+        "query": null,
+        "body": "{\"id\":null,\"line1\":\"42 Douglas Adams Way\",\"line2\":null,\"city\":\"Phoenix\",\"postalCode\":\"85042\",\"state\":\"AZ\",\"country\":\"US\"}"
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"id\":\"d233ca06-c5ec-4fc3-badf-1f12ba5c59a9\",\"line1\":\"42 Douglas Adams Way\",\"line2\":null,\"city\":\"Phoenix\",\"postalCode\":\"85042\",\"state\":\"AZ\",\"country\":\"US\"}",
+        "headers": {
+          "Content-Type": [
+            "application/json;charset=UTF-8"
+          ]
+        }
+      }
+    }
+  ]
+}

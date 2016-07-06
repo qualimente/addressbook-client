@@ -12,13 +12,15 @@ import static org.junit.Assert.*;
  */
 public class AddressBookClientHttpIT {
 
+
+  @SuppressWarnings("unused") //API_CONTRACT_EXAMPLES_CLASSPATH can be used for local examples and debugging!
   protected static final String API_CONTRACT_EXAMPLES_CLASSPATH = "examples.addressbook-contract.json";
+  protected static final String API_CONTRACT_EXAMPLES_URL = "https://raw.githubusercontent.com/qualimente/addressbook-api/master/src/main/resources/request_to_add_an_address_for_a_new_customer_should_succeed.json";
   protected static final String BASE_SERVER_URI = "http://addressbook.qualimente.com";
 
   @ClassRule
-  public static final HoverflyRule HOVERFLY_RULE = HoverflyRule.buildFromClassPathResource(API_CONTRACT_EXAMPLES_CLASSPATH)
+  public static final HoverflyRule HOVERFLY_RULE = HoverflyRule.buildFromUrl(API_CONTRACT_EXAMPLES_URL)
       .build();
-
 
   @Test
   public void addAddress_should_add_new_address_for_customer() throws Exception {
@@ -41,16 +43,5 @@ public class AddressBookClientHttpIT {
     assertEquals(newAddress.getState(), actual.getState());
     assertEquals(newAddress.getCountry(), actual.getCountry());
   }
-
-/*
-  @Test
-  public void addAddress_should_add_new_address_for_customer_intentionally_unhandled() throws Exception {
-    AddressBookClient client = new AddressBookClientHttp(BASE_SERVER_URI);
-    Address expected = new Address(null, "address line 1", "line2", "city", "postal code", "state", "country");
-    Address actual = client.addAddress("abcd-1234", expected);
-
-    assertEquals(expected, actual);
-  }
-*/
 
 }

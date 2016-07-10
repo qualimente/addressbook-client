@@ -56,13 +56,19 @@ public class AddressBookClientHttp implements AddressBookClient {
   }
 
   static class SerializationException extends RuntimeException {
-    SerializationException(String message, Throwable cause) {
+
+	private static final long serialVersionUID = 1L;
+
+	SerializationException(String message, Throwable cause) {
       super(message, cause);
     }
   }
 
   static class CouldNotAddAddressException extends RuntimeException {
-    CouldNotAddAddressException(String message) {
+
+	private static final long serialVersionUID = 1L;
+
+	CouldNotAddAddressException(String message) {
       super(message);
     }
   }
